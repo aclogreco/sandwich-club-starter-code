@@ -1,84 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-    <ScrollView
-        android:id="@+id/scroll_view"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context="com.udacity.sandwichclub.DetailActivity">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/image_iv"
             android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/sandwich_picture_content_description"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/origin_label_tv"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:context="com.udacity.sandwichclub.DetailActivity">
+            android:text="@string/detail_place_of_origin_label"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/image_iv"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginBottom="16dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/sandwich_picture_content_description"
-                android:scaleType="centerCrop" />
+        <TextView
+            android:id="@+id/origin_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/sandwich_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sandwich Name" />
+        <TextView
+            android:id="@+id/also_known_as_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_also_known_as_label"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/origin_label_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/detail_place_of_origin_label"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/also_known_as_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/origin_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Origin" />
+        <TextView
+            android:id="@+id/ingredients_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_ingredients_label"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/also_known_as_label_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/detail_also_known_as_label"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/ingredients_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/also_known_as_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Also Known As" />
+        <TextView
+            android:id="@+id/description_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_description_label"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/ingredients_label_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/detail_ingredients_label"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/description_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/ingredients_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ingredients" />
-
-            <TextView
-                android:id="@+id/description_label_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/detail_description_label"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/description_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Description" />
-
-        </LinearLayout>
-    </ScrollView>
-</layout>
+    </LinearLayout>
+</ScrollView>

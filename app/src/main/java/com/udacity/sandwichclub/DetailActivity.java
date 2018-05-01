@@ -85,20 +85,24 @@ public class DetailActivity extends AppCompatActivity {
         // Convert the list of a.k.a. names into a string.
         // Use that string for alsoKnownAsTV's text.
         List<String> akaList = sandwich.getAlsoKnownAs();
-        String akaNames = "";
+        StringBuilder akaNames = new StringBuilder("");
         for (String akaName : akaList) {
-            akaNames += "  * " + akaName + "\n";
+            akaNames.append("  * ");
+            akaNames.append(akaName);
+            akaNames.append("\n");
         }
-        alsoKnownAsTV.setText(akaNames);
+        alsoKnownAsTV.setText(akaNames.toString());
 
         // Convert the list of ingredients into a string.
         // Use that string for ingredientsTV's text.
         List<String> ingredientsList = sandwich.getIngredients();
-        String ingredients = "";
+        StringBuilder ingredients = new StringBuilder("");
         for (String ingredient : ingredientsList) {
-            ingredients += "  * " + ingredient + "\n";
+            ingredients.append("  * ");
+            ingredients.append(ingredient);
+            ingredients.append("\n");
         }
-        ingredientsTV.setText(ingredients);
+        ingredientsTV.setText(ingredients.toString());
 
         // Set the description text.
         descriptionTV.setText(sandwich.getDescription());

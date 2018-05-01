@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Detail Activity layout view dimensions -->
+    <dimen name="view_margin_bottom">16dp</dimen>
+    <dimen name="label_margin_left">10dp</dimen>
+    <dimen name="tv_margin_right">10dp</dimen>
+    <dimen name="tv_margin_left">20dp</dimen>
+
 </resources>

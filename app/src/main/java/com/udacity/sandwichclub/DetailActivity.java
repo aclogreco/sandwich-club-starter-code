@@ -80,7 +80,11 @@ public class DetailActivity extends AppCompatActivity {
                 .into(sandwichImageIV);
 
         // Set the origin text.
-        originTV.setText(sandwich.getPlaceOfOrigin());
+        if (sandwich.getPlaceOfOrigin().isEmpty()) {
+            originTV.setText(R.string.string_unknown_origin);
+        } else {
+            originTV.setText(sandwich.getPlaceOfOrigin());
+        }
 
         // Convert the list of a.k.a. names into a string.
         // Use that string for alsoKnownAsTV's text.

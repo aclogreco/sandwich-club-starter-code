@@ -1,3 +1,8 @@
+# Anthony LoGreco's Implementation of the Sandwich Club Project
+This project was forked from [Sandwich Club app starter code.](https://github.com/udacity/sandwich-club-starter-code)
+All modifications made to fulfill the project requirements were made by Anthony LoGreco.
+Error image asset is from [Material.io Icon Assets.](https://material.io/icons)
+
 # Sandwich Club Project Starter Code
 
 ## Project Overview

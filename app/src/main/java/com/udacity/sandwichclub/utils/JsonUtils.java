@@ -1,13 +1,13 @@
 package com.udacity.sandwichclub.utils;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.udacity.sandwichclub.model.Sandwich;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.udacity.sandwichclub.model.Sandwich;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JsonUtils {
 
@@ -19,11 +19,14 @@ public class JsonUtils {
      */
     public static Sandwich parseSandwichJson(String json) throws JSONException {
         Sandwich sandwich = new Sandwich();
+        // Create JSON objects from the json string.
         JSONObject sandwichJsonObject = new JSONObject(json);
         JSONObject sandwichNameJsonObject = sandwichJsonObject.getJSONObject("name");
 
+        // parse the main name
         sandwich.setMainName(sandwichNameJsonObject.getString("mainName"));
 
+        // Create a list of strings from a JSON array for the list of a.k.a names.
         JSONArray alsoKnownAsJsonArray = sandwichNameJsonObject.getJSONArray("alsoKnownAs");
         List<String> alsoKnownAsList = new ArrayList<String>();
         if (alsoKnownAsJsonArray != null) {
@@ -33,10 +36,14 @@ public class JsonUtils {
         }
         sandwich.setAlsoKnownAs(alsoKnownAsList);
 
+        // parse the place of origin
         sandwich.setPlaceOfOrigin(sandwichJsonObject.getString("placeOfOrigin"));
+        // parse the description
         sandwich.setDescription(sandwichJsonObject.getString("description"));
+        // parse the image URL
         sandwich.setImage(sandwichJsonObject.getString("image"));
 
+        // Create a list of strings from a JSON array for the list of ingredients.
         JSONArray ingredientsJsonArray = sandwichJsonObject.getJSONArray("ingredients");
         List<String> ingredientsList = new ArrayList<String>();
         if (ingredientsJsonArray != null) {

@@ -77,6 +77,7 @@ public class DetailActivity extends AppCompatActivity {
         // Load the sandwich image.
         Picasso.with(this)
                 .load(sandwich.getImage())
+                .error(R.drawable.ic_error_outline_black_48px)
                 .into(sandwichImageIV);
 
         // Set the origin text.

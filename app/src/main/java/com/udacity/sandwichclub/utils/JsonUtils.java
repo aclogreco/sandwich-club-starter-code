@@ -31,7 +31,7 @@ public class JsonUtils {
 
         // parse the main name
         sandwich.setMainName(
-                sandwichNameJsonObject.getString(
+                sandwichNameJsonObject.optString(
                         context.getString(R.string.sandwich_json_name_mainName_key)));
 
         // Create a list of strings from a JSON array for the list of a.k.a names.
@@ -40,22 +40,22 @@ public class JsonUtils {
         List<String> alsoKnownAsList = new ArrayList<String>();
         if (alsoKnownAsJsonArray != null) {
             for (int i = 0; i < alsoKnownAsJsonArray.length(); i++) {
-                alsoKnownAsList.add(alsoKnownAsJsonArray.getString(i));
+                alsoKnownAsList.add(alsoKnownAsJsonArray.optString(i));
             }
         }
         sandwich.setAlsoKnownAs(alsoKnownAsList);
 
         // parse the place of origin
         sandwich.setPlaceOfOrigin(
-                sandwichJsonObject.getString(
+                sandwichJsonObject.optString(
                         context.getString(R.string.sandwich_json_placeOfOrigin_key)));
         // parse the description
         sandwich.setDescription(
-                sandwichJsonObject.getString(
+                sandwichJsonObject.optString(
                         context.getString(R.string.sandwich_json_desciption_key)));
         // parse the image URL
         sandwich.setImage(
-                sandwichJsonObject.getString(
+                sandwichJsonObject.optString(
                         context.getString(R.string.sandwich_json_image_key)));
 
         // Create a list of strings from a JSON array for the list of ingredients.
@@ -64,7 +64,7 @@ public class JsonUtils {
         List<String> ingredientsList = new ArrayList<String>();
         if (ingredientsJsonArray != null) {
             for (int i = 0; i < ingredientsJsonArray.length(); i++) {
-                ingredientsList.add(ingredientsJsonArray.getString(i));
+                ingredientsList.add(ingredientsJsonArray.optString(i));
             }
         }
         sandwich.setIngredients(ingredientsList);

@@ -42,7 +42,7 @@ public class DetailActivity extends AppCompatActivity {
         Sandwich sandwich = null;
 
         try {
-            sandwich = JsonUtils.parseSandwichJson(json);
+            sandwich = JsonUtils.parseSandwichJson(this, json);
         } catch (JSONException e) {
             closeOnError();
             return;

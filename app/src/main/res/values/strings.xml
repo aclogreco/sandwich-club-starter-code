@@ -15,6 +15,13 @@
 
 
     <string name="string_unknown_origin">Unknown</string>
+    <string name="sandwich_json_name_key">name</string>
+    <string name="sandwich_json_name_mainName_key">mainName</string>
+    <string name="sandwich_json_name_aka_key">alsoKnownAs</string>
+    <string name="sandwich_json_placeOfOrigin_key">placeOfOrigin</string>
+    <string name="sandwich_json_desciption_key">description</string>
+    <string name="sandwich_json_image_key">image</string>
+    <string name="sandwich_json_ingredients_key">ingredients</string>
 
     <string-array name="sandwich_names">
         <item>Ham and cheese sandwich</item>

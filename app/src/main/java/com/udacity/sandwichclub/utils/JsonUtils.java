@@ -37,12 +37,7 @@ public class JsonUtils {
         // Create a list of strings from a JSON array for the list of a.k.a names.
         JSONArray alsoKnownAsJsonArray = sandwichNameJsonObject.getJSONArray(
                 context.getString(R.string.sandwich_json_name_aka_key));
-        List<String> alsoKnownAsList = new ArrayList<String>();
-        if (alsoKnownAsJsonArray != null) {
-            for (int i = 0; i < alsoKnownAsJsonArray.length(); i++) {
-                alsoKnownAsList.add(alsoKnownAsJsonArray.optString(i));
-            }
-        }
+        List<String> alsoKnownAsList = convertJsonArrayToList(alsoKnownAsJsonArray);
         sandwich.setAlsoKnownAs(alsoKnownAsList);
 
         // parse the place of origin
@@ -61,14 +56,25 @@ public class JsonUtils {
         // Create a list of strings from a JSON array for the list of ingredients.
         JSONArray ingredientsJsonArray = sandwichJsonObject.getJSONArray(
                 context.getString(R.string.sandwich_json_ingredients_key));
-        List<String> ingredientsList = new ArrayList<String>();
-        if (ingredientsJsonArray != null) {
-            for (int i = 0; i < ingredientsJsonArray.length(); i++) {
-                ingredientsList.add(ingredientsJsonArray.optString(i));
-            }
-        }
+        List<String> ingredientsList = convertJsonArrayToList(ingredientsJsonArray);
         sandwich.setIngredients(ingredientsList);
 
         return sandwich;
+    }
+
+    /**
+     * Converts a JSONArray into a List of strings.
+     * @param jsonArray A JSON array
+     * @return A List of Strings
+     */
+    private static List<String> convertJsonArrayToList(JSONArray jsonArray) {
+        List<String> stringList = new ArrayList<String>();
+        if (jsonArray != null) {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                stringList.add(jsonArray.optString(i));
+            }
+        }
+
+        return stringList;
     }
 }

@@ -3,6 +3,7 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -73,6 +74,7 @@ public class DetailActivity extends AppCompatActivity {
         ImageView sandwichImageIV = findViewById(R.id.image_iv);
         TextView originTV = findViewById(R.id.origin_tv);
         TextView alsoKnownAsTV = findViewById(R.id.also_known_as_tv);
+        TextView alsoKnownAsLabelTV = findViewById(R.id.also_known_as_label_tv);
         TextView ingredientsTV = findViewById(R.id.ingredients_tv);
         TextView descriptionTV = findViewById(R.id.description_tv);
 
@@ -92,13 +94,20 @@ public class DetailActivity extends AppCompatActivity {
         // Convert the list of a.k.a. names into a string.
         // Use that string for alsoKnownAsTV's text.
         List<String> akaList = sandwich.getAlsoKnownAs();
-        StringBuilder akaNames = new StringBuilder("");
-        for (String akaName : akaList) {
-            akaNames.append("  * ");
-            akaNames.append(akaName);
-            akaNames.append("\n");
+        if (akaList.isEmpty()) {
+            alsoKnownAsTV.setVisibility(View.INVISIBLE);
+            alsoKnownAsLabelTV.setVisibility(View.INVISIBLE);
+        } else {
+            StringBuilder akaNames = new StringBuilder("");
+            for (String akaName : akaList) {
+                akaNames.append("  * ");
+                akaNames.append(akaName);
+                akaNames.append("\n");
+            }
+            alsoKnownAsLabelTV.setVisibility(View.VISIBLE);
+            alsoKnownAsTV.setVisibility(View.VISIBLE);
+            alsoKnownAsTV.setText(akaNames.toString());
         }
-        alsoKnownAsTV.setText(akaNames.toString());
 
         // Convert the list of ingredients into a string.
         // Use that string for ingredientsTV's text.
